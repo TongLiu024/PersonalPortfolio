@@ -1,10 +1,11 @@
 import React from 'react'
 import "./home.css";
+import { TypeAnimation } from 'react-type-animation';
 
 const Data = () => {
   return (
     <div className="home_data">
-        <h1 className="home_title">Tong Liu
+        <h1 className="home_title">Jonathon Liu
         <svg
                   width="36"
                   height="36"
@@ -56,11 +57,23 @@ const Data = () => {
                 </svg>
 
         </h1>
-        <h3 className="home_subtitle">
-            Software Developer
-        </h3>
         <p className="home_description">
-            I am a software developer, based in Vancouver
+            I am a <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        ' Software Developer',
+        1000, // wait 1s before replacing "Mice" with "Hamsters"
+        ' Materials Scientist',
+        1000,
+        ' Chemist',
+        1000,
+        
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '1.75rem', display: 'inline-block' }}
+      repeat={Infinity}
+    />
         </p>
 
         <a href="#contact" className="button button--flex " >
